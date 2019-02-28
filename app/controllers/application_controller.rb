@@ -39,6 +39,6 @@ class ApplicationController < Sinatra::Base
   end
   
   patch '/articles/:id' do 
-    Article.update("#{:id}", :title => params[:title], :content => params[:content])
+    Article.update("#{id}", :title => params[:title], :content => params[:content])
   end
 end
