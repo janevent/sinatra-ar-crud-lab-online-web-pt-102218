@@ -41,5 +41,6 @@ class ApplicationController < Sinatra::Base
   patch '/articles/:id' do 
     @article = Article.update(params[:id], :title => params[:title], :content => params[:content])
     @article.save
+    redirect "/articles/#{@article.id}"
   end
 end
